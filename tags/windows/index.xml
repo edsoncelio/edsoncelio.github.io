@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Edson Celio</title>
+    <link>https://edsoncelio.github.io/tags/windows/</link>
+    <description>Recent content in windows on Edson Celio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Dec 2019 00:29:11 -0300</lastBuildDate>
+    
+	<atom:link href="https://edsoncelio.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gerência de configuração de máquinas Windows com Ansible</title>
+      <link>https://edsoncelio.github.io/gerencia-windows-ansible/</link>
+      <pubDate>Sun, 29 Dec 2019 00:29:11 -0300</pubDate>
+      
+      <guid>https://edsoncelio.github.io/gerencia-windows-ansible/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2019 on Edson Celio</title>
+    <link>https://edsoncelio.github.io/categories/2019/</link>
+    <description>Recent content in 2019 on Edson Celio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Dec 2019 00:29:11 -0300</lastBuildDate>
+    
+	<atom:link href="https://edsoncelio.github.io/categories/2019/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Integracao Jenkins Msteams</title>
+      <link>https://edsoncelio.github.io/integracao-jenkins-msteams/</link>
+      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
+      
+      <guid>https://edsoncelio.github.io/integracao-jenkins-msteams/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gerência de configuração de máquinas Windows com Ansible</title>
+      <link>https://edsoncelio.github.io/gerencia-windows-ansible/</link>
+      <pubDate>Sun, 29 Dec 2019 00:29:11 -0300</pubDate>
+      
+      <guid>https://edsoncelio.github.io/gerencia-windows-ansible/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

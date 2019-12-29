@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jenkins on Edson Celio</title>
+    <link>https://edsoncelio.github.io/tags/jenkins/</link>
+    <description>Recent content in jenkins on Edson Celio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Dec 2019 19:37:09 -0300</lastBuildDate>
+    
+	<atom:link href="https://edsoncelio.github.io/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Integracao Jenkins Msteams</title>
+      <link>https://edsoncelio.github.io/integracao-jenkins-msteams/</link>
+      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
+      
+      <guid>https://edsoncelio.github.io/integracao-jenkins-msteams/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
