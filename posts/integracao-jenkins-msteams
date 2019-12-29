@@ -1,6 +1,8 @@
 ---
 title: "Integracao Jenkins Msteams"
 date: 2019-12-29T00:28:54-03:00
+categories: ["devops", "infra"]
+tags: ["ci", "jenkins", "msteams"]
 draft: true
 ---
 
