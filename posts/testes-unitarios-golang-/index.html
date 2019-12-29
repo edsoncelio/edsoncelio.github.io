@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.62.0" />
+
+    
+    
+    
+
+<title>Escrevendo testes unitários com Golang • Edson Celio</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Escrevendo testes unitários com Golang"/>
+<meta name="twitter:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes."/>
+
+<meta property="og:title" content="Escrevendo testes unitários com Golang" />
+<meta property="og:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://edsoncelio.github.io/posts/testes-unitarios-golang-/" />
+<meta property="article:published_time" content="2019-12-28T19:37:09-03:00" />
+<meta property="article:modified_time" content="2019-12-28T19:37:09-03:00" /><meta property="og:site_name" content="DevOps Guy" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.92c66d107d7b219f0792cfd67223179af884b03f386ac46894f9f735932bbca3.css" integrity="sha256-ksZtEH17IZ8Hks/WciMXmviEsD84asRolPn3NZMrvKM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://edsoncelio.github.io">Edson Celio</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://edsoncelio.github.ioimg/profile.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         This is my personal page 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Edson Celio</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/tuxpilgrim" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/edsoncelio" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/edsoncelio" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/tuxpilgrim" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:edsoncelio2020@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 tuxpilgrim
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Escrevendo testes unitários com Golang</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Dec 28, 28129
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/hugo">HUGO</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/unit-tests">unit tests</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/golang">golang</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/testes-unit%C3%A1rios">testes unitários</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote <code>testing</code> e começar a escrever os testes.</p>
+<h3 id="exemplo">Exemplo</h3>
+<p>Temos um arquivo chamado <code>main.go</code> com uma função chamada <code>Soma()</code> que realiza a soma de dois números:</p>
+<pre><code>package main
+
+func Soma(x,y int) int{
+  return x + y
+}
+...
+</code></pre><p>Agora vamos escrever um teste para verificar a função <code>Soma()</code>, em um arquivo chamado <code>main_test.go</code>:</p>
+<pre><code>package main
+
+func TestSoma(t *testing.T){
+  resultado := Soma(2,2)
+  if resultado != 4{
+    t.Errorf(&quot;Soma esperada: %d, obtida: %d&quot;, 4, resultado)
+  }
+}
+</code></pre><p>A função de teste acima, testa apenas <strong>UM</strong> valor por vez, para múltiplas entrada (e multiplas saída), tem-se o conceito de <em>test tables</em>:</p>
+<pre><code>package main
+
+import &quot;testing&quot;
+
+func TestSoma(t *testing.T) {
+	tabelas := []struct {
+		x int
+		y int
+		n int
+	}{
+		{1, 2, 3},
+		{2, 3, 5},
+		{0, 1, 1},
+	}
+
+	for _, tabela := range tabelas {
+		total := Soma(tabela.x, tabela.y)
+		if total != tabela.n {
+			t.Errorf(&quot;Soma de (%d+%d) incorreta, obtido: %d, esperado: %d.&quot;, tabela.x, tabela.y, total, tabela.n)
+		}
+	}
+}
+</code></pre><p>Pronto, já temos o teste relacionado a função de soma. Alguma considerações gerais:</p>
+<ul>
+<li>O único parâmetro requerido pela função de teste é <code>t *testing.T</code></li>
+<li>O nome da função de testes segue o padrão: <code>Test</code> + nome da função com primeira letra maiúscula (e.g <code>TestSoma</code>)</li>
+<li>O nome do arquivo de testes segue padrão <code>algumacoisa_test.go</code> (e.g <code>main_test.go</code>)</li>
+</ul>
+<p>Para executar os testes, podemos fazer:</p>
+<ul>
+<li>no mesmo diretório: <code>go test</code></li>
+<li>explicitando o diretório: <code>go test github.com/edsoncelio/golangtest</code></li>
+</ul>
+<p>Esse é o básico para começar a escrever testes unitários, deixo algumas leituras recomendadas para tópicos mais avançados.</p>
+<p>Leituras recomendadas:</p>
+<ol>
+<li><a href="https://blog.alexellis.io/golang-writing-unit-tests/">Golang basics - writing unit tests</a></li>
+<li><a href="https://golang.org/pkg/testing/">Testing</a></li>
+</ol>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'edsoncelio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
