@@ -6,7 +6,7 @@
     <description>Recent content in git on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Dec 2019 10:01:22 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Git Aliases</title>
       <link>https://edsoncelio.github.io/posts/git-alias/</link>
-      <pubDate>Sun, 29 Dec 2019 10:01:22 -0300</pubDate>
+      <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://edsoncelio.github.io/posts/git-alias/</guid>
       <description>Para quem usa linux (powershell também tem algo similar) sabe que usar alias facilita muito a vida, porque basicamente damos um apelido para comandos que usamos frequentemente, e no git é a mesma coisa.</description>

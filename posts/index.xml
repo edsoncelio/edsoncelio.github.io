@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Dec 2019 19:37:09 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,19 @@
     <item>
       <title>Escrevendo testes unitários com Golang</title>
       <link>https://edsoncelio.github.io/posts/testes-unitarios-golang-/</link>
-      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://edsoncelio.github.io/posts/testes-unitarios-golang-/</guid>
       <description>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes.</description>
+    </item>
+    
+    <item>
+      <title>Git Aliases</title>
+      <link>https://edsoncelio.github.io/posts/git-alias/</link>
+      <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://edsoncelio.github.io/posts/git-alias/</guid>
+      <description>Para quem usa linux (powershell também tem algo similar) sabe que usar alias facilita muito a vida, porque basicamente damos um apelido para comandos que usamos frequentemente, e no git é a mesma coisa.</description>
     </item>
     
   </channel>

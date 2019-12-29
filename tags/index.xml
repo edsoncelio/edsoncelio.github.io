@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Dec 2019 19:37:09 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>git</title>
+      <link>https://edsoncelio.github.io/tags/git/</link>
+      <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://edsoncelio.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>golang</title>
       <link>https://edsoncelio.github.io/tags/golang/</link>
-      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://edsoncelio.github.io/tags/golang/</guid>
       <description></description>
@@ -23,7 +32,7 @@
     <item>
       <title>testes unitários</title>
       <link>https://edsoncelio.github.io/tags/testes-unit%C3%A1rios/</link>
-      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://edsoncelio.github.io/tags/testes-unit%C3%A1rios/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>unit tests</title>
       <link>https://edsoncelio.github.io/tags/unit-tests/</link>
-      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://edsoncelio.github.io/tags/unit-tests/</guid>
       <description></description>
