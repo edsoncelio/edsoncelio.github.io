@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://edsoncelio.github.io/categories/devops/</loc>
+    <lastmod>2019-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://edsoncelio.github.io/</loc>
     <lastmod>2019-08-24T00:00:00+00:00</lastmod>
   </url>
@@ -45,6 +50,26 @@
   <url>
     <loc>https://edsoncelio.github.io/tags/</loc>
     <lastmod>2019-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/ansible/</loc>
+    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</loc>
+    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/categories/infra/</loc>
+    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/windows/</loc>
+    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>

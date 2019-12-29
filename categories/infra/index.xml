@@ -6,27 +6,18 @@
     <description>Recent content in infra on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Dec 2019 00:29:11 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/categories/infra/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Integracao Jenkins Msteams</title>
-      <link>https://edsoncelio.github.io/integracao-jenkins-msteams/</link>
-      <pubDate>Sat, 28 Dec 2019 19:37:09 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/integracao-jenkins-msteams/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Gerência de configuração de máquinas Windows com Ansible</title>
-      <link>https://edsoncelio.github.io/gerencia-windows-ansible/</link>
-      <pubDate>Sun, 29 Dec 2019 00:29:11 -0300</pubDate>
+      <link>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</link>
+      <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://edsoncelio.github.io/gerencia-windows-ansible/</guid>
-      <description></description>
+      <guid>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</guid>
+      <description>Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible, pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso.</description>
     </item>
     
   </channel>

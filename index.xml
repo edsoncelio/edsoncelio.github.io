@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Gerência de configuração de máquinas Windows com Ansible</title>
+      <link>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</link>
+      <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</guid>
+      <description>Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible, pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso.</description>
+    </item>
+    
+    <item>
       <title>Edson Celio (aka tuxpilgrim)</title>
       <link>https://edsoncelio.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
