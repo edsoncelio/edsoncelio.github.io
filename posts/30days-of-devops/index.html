@@ -17,19 +17,21 @@
     
     
 
-<title>Escrevendo testes unitários com Golang • Edson Celio</title>
+<title>30 Days of Devops • Edson Celio</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Escrevendo testes unitários com Golang"/>
-<meta name="twitter:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes."/>
+<meta name="twitter:title" content="30 Days of Devops"/>
+<meta name="twitter:description" content="Objectives For 30 days, write articles with problem solving in real scenarios using DevOps culture concepts/tools.
+Rules  Title format: day&lt;day number&gt;-&lt;article title&gt; All codes used to resolve the issues will be made available in https://github."/>
 
-<meta property="og:title" content="Escrevendo testes unitários com Golang" />
-<meta property="og:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes." />
+<meta property="og:title" content="30 Days of Devops" />
+<meta property="og:description" content="Objectives For 30 days, write articles with problem solving in real scenarios using DevOps culture concepts/tools.
+Rules  Title format: day&lt;day number&gt;-&lt;article title&gt; All codes used to resolve the issues will be made available in https://github." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://edsoncelio.github.io/posts/testes-unitarios-golang-/" />
-<meta property="article:published_time" content="2018-02-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-02-28T00:00:00+00:00" />
+<meta property="og:url" content="https://edsoncelio.github.io/posts/30days-of-devops/" />
+<meta property="article:published_time" content="2019-12-29T19:03:04-03:00" />
+<meta property="article:modified_time" content="2019-12-29T19:03:04-03:00" />
 
 
     
@@ -167,13 +169,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Escrevendo testes unitários com Golang</h1>
+    <h1>30 Days of Devops</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Feb 28, 2018
+      <i class="fas fa-calendar-alt"></i> Dec 29, 2019
     
     
     
@@ -182,10 +184,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           in
           
           
-              <a class="badge badge-category" href="/categories/dev">DEV</a>
+              <a class="badge badge-category" href="/categories/devops">DEVOPS</a>
               •
           
-              <a class="badge badge-category" href="/categories/2018">2018</a>
+              <a class="badge badge-category" href="/categories/2019">2019</a>
               
           
       
@@ -197,19 +199,16 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/unit-tests">unit tests</a>
+          <a class="badge badge-tag" href="/tags/en">en</a>
            
       
-          <a class="badge badge-tag" href="/tags/golang">golang</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/testes-unit%C3%A1rios">testes unitários</a>
+          <a class="badge badge-tag" href="/tags/30daysofdevops">30daysofdevops</a>
           
       
     
     
     <br/>
-    <i class="fas fa-clock"></i> 2 min read
+    <i class="fas fa-clock"></i> 1 min read
 </div>
 
 
@@ -217,76 +216,35 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   
   <div class="post">
-    <p>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote <code>testing</code> e começar a escrever os testes.</p>
-<h3 id="exemplo">Exemplo</h3>
-<p>Temos um arquivo chamado <code>main.go</code> com uma função chamada <code>Soma()</code> que realiza a soma de dois números:</p>
-<pre><code>package main
-
-func Soma(x,y int) int{
-  return x + y
-}
-...
-
-</code></pre><p>Agora vamos escrever um teste para verificar a função <code>Soma()</code>, em um arquivo chamado <code>main_test.go</code>:</p>
-<pre><code>package main
-
-func TestSoma(t *testing.T){
-  resultado := Soma(2,2)
-  if resultado != 4{
-    t.Errorf(&quot;Soma esperada: %d, obtida: %d&quot;, 4, resultado)
-  }
-}
-</code></pre><p>A função de teste acima, testa apenas <strong>UM</strong> valor por vez, para múltiplas entrada (e multiplas saída), tem-se o conceito de <em>test tables</em>:</p>
-<pre><code>package main
-
-import &quot;testing&quot;
-
-func TestSoma(t *testing.T) {
-	tabelas := []struct {
-		x int
-		y int
-		n int
-	}{
-		{1, 2, 3},
-		{2, 3, 5},
-		{0, 1, 1},
-	}
-
-	for _, tabela := range tabelas {
-		total := Soma(tabela.x, tabela.y)
-		if total != tabela.n {
-			t.Errorf(&quot;Soma de (%d+%d) incorreta, obtido: %d, esperado: %d.&quot;, tabela.x, tabela.y, total, tabela.n)
-		}
-	}
-}
-</code></pre><p>Pronto, já temos o teste relacionado a função de soma. Alguma considerações gerais:</p>
+    <h2 id="objectives">Objectives</h2>
+<p>For 30 days, write articles with problem solving in real scenarios using DevOps culture concepts/tools.</p>
+<h2 id="rules">Rules</h2>
 <ul>
-<li>O único parâmetro requerido pela função de teste é <code>t *testing.T</code></li>
-<li>O nome da função de testes segue o padrão: <code>Test</code> + nome da função com primeira letra maiúscula (e.g <code>TestSoma</code>)</li>
-<li>O nome do arquivo de testes segue padrão <code>algumacoisa_test.go</code> (e.g <code>main_test.go</code>)</li>
+<li><strong>Title format:</strong> <code>day&lt;day number&gt;-&lt;article title&gt;</code></li>
+<li>All codes used to resolve the issues will be made available in  <a href="https://github.com/edsoncelio/30daysofdevops">https://github.com/edsoncelio/30daysofdevops</a></li>
+<li>Code solutions should follow good practices</li>
+<li>Due to work, it is acceptable delay of <strong>up to 2 days</strong></li>
+<li>All references used to resolve the problem, must be added in the article</li>
+<li>As part of a planning to improve english, <strong>all articles will be written in english</strong> (at the end, it is possible to translate to Portuguese)</li>
+<li>Start date: <strong>January 06th, 2020</strong></li>
 </ul>
-<p>Para executar os testes, podemos fazer:</p>
-<ul>
-<li>no mesmo diretório: <code>go test</code></li>
-<li>explicitando o diretório: <code>go test github.com/edsoncelio/golangtest</code></li>
-</ul>
-<p>Esse é o básico para começar a escrever testes unitários, deixo algumas leituras recomendadas para tópicos mais avançados.</p>
-<p>Leituras recomendadas:</p>
-<ol>
-<li><a href="https://blog.alexellis.io/golang-writing-unit-tests/">Golang basics - writing unit tests</a></li>
-<li><a href="https://golang.org/pkg/testing/">Testing</a></li>
-</ol>
+<h5 id="link-to-all-articles-httpsedsonceliogithubiotags30daysofdevops">Link to all articles: <a href="https://edsoncelio.github.io/tags/30daysofdevops">https://edsoncelio.github.io/tags/30daysofdevops</a></h5>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/posts/30days-of-devops/" class="navigation-prev">
+    <a href="/posts/git-alias/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">30 Days of Devops</span>
+      <span class="navigation-tittle">Git Aliases</span>
     </a>
     
+    
+    <a href="/posts/testes-unitarios-golang-/" class="navigation-next">
+      <span class="navigation-tittle">Escrevendo testes unitários com Golang</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 
