@@ -17,19 +17,21 @@
     
     
 
-<title>Gerência de configuração de máquinas Windows com Ansible • Edson Celio</title>
+<title>Day 01 - Deploying an App from Gitlab to Heroku • Edson Celio</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Gerência de configuração de máquinas Windows com Ansible"/>
-<meta name="twitter:description" content="Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible, pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso."/>
+<meta name="twitter:title" content="Day 01 - Deploying an App from Gitlab to Heroku"/>
+<meta name="twitter:description" content="Problem Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.
+Solution First of all, you need to create the heroku application, at New&gt; Create new app: "/>
 
-<meta property="og:title" content="Gerência de configuração de máquinas Windows com Ansible" />
-<meta property="og:description" content="Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible, pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso." />
+<meta property="og:title" content="Day 01 - Deploying an App from Gitlab to Heroku" />
+<meta property="og:description" content="Problem Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.
+Solution First of all, you need to create the heroku application, at New&gt; Create new app: " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/" />
-<meta property="article:published_time" content="2019-04-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-04-28T00:00:00+00:00" />
+<meta property="og:url" content="https://edsoncelio.github.io/posts/day01-deploying-app-gitlab-heroku/" />
+<meta property="article:published_time" content="2020-01-06T20:17:02-03:00" />
+<meta property="article:modified_time" content="2020-01-06T20:17:02-03:00" />
 
 
     
@@ -167,13 +169,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Gerência de configuração de máquinas Windows com Ansible</h1>
+    <h1>Day 01 - Deploying an App from Gitlab to Heroku</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Apr 28, 2019
+      <i class="fas fa-calendar-alt"></i> Jan 6, 2020
     
     
     
@@ -183,9 +185,6 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           
           
               <a class="badge badge-category" href="/categories/devops">DEVOPS</a>
-              •
-          
-              <a class="badge badge-category" href="/categories/infra">INFRA</a>
               •
           
               <a class="badge badge-category" href="/categories/2019">2019</a>
@@ -200,16 +199,16 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/ansible">ansible</a>
+          <a class="badge badge-tag" href="/tags/en">en</a>
            
       
-          <a class="badge badge-tag" href="/tags/windows">windows</a>
+          <a class="badge badge-tag" href="/tags/30daysofdevops">30daysofdevops</a>
           
       
     
     
     <br/>
-    <i class="fas fa-clock"></i> 3 min read
+    <i class="fas fa-clock"></i> 1 min read
 </div>
 
 
@@ -217,58 +216,25 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   
   <div class="post">
-    <p>Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible,
-pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso.</p>
-<h2 id="no-se-usa-ssh-e-sim-winrm">Não se usa SSH, e sim WinRM</h2>
-<p>O primeiro ponto é que em hosts Windows se usa protocolo chamado <a href="https://docs.microsoft.com/en-us/windows/desktop/winrm/portal">Windows Remote Management</a>
-(baseado em SOAP) que deve ser configurado previamente no host.</p>
-<p>Felizmente a documentação do Ansible fornece um script para fazer toda a configuração, nesse <a href="https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html#winrm-setup">link</a>.</p>
-<p><strong>observação:</strong> recomendo fazer todos os testes que a documentação sugere, porque se tiver alguma chance de alguma dar errado, com certeza vai dar!</p>
-<h2 id="-necessrio-instalar-a-biblioteca-pywinrm-no-ansible">É necessário instalar a biblioteca pywinrm no Ansible</h2>
-<p>Dado que o Ansible comunica com hosts windows usando o winrm, é necessário instalar uma biblioteca que não vem por padrão no Ansible,
-é bem simples (é python :D):</p>
-<p><code>pip3 install &quot;pywinrm&gt;=0.3.0&quot;</code></p>
-<h2 id="configurao-dos-hosts-no-inventrio">Configuração dos hosts no inventário</h2>
-<p>Com o winrm configurado corretamente, é hora de configurar efetivamente a conexão com os hosts do inventário, o que requer um pouco de atenção.</p>
-<p>Segue um exemplo de inventário com uma máquina windows:</p>
-<pre><code>[win]
-192.168.2.10 
-
-[win:vars]
-ansible_user=meu_windows
-ansible_password=minha_senha_do_windows_s2
-ansible_connection=winrm
-ansible_winrm_server_cert_validation=ignore
-</code></pre><p>Como podem ver, tem duas variável referentes a conexão com o Winrm: a primeira define que o tipo de conexão não é ssh e sim o winrm,
-e a segunda se refere a não validação de certificados dado que para esse caso estamos autenticando via usuário e senha.</p>
-<p>Além dessas opções existem outras que vale a pena comentar:</p>
-<p><code>ansible_winrm_transport</code></p>
-<p>Que pode ser : <strong>basic</strong>, <strong>certificate</strong>, <strong>kerberos</strong>, <strong>ntlm</strong> e <strong>credssp</strong> (isso daria um artigo inteiro, então vou deixar o link da documentação nas referências).</p>
-<p><code>ansible_winrm_scheme</code></p>
-<p>Que pode ser: http ou https (por padrão é usado https que usa a porta 5986, http usa a porta 5985)</p>
-<p>Além dessas opções existem muitas outras, que podem ser usadas dependendo do caso, todas as opções podem ser vistas na documentação também, nesse <a href="https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html#inventory-options">link</a>.</p>
-<h2 id="executando-mdulos-windows-no-ansible">Executando módulos Windows no Ansible</h2>
-<p>Finalmente, se tudo tiver sido configurado com sucesso, é possível comunicar com seu host windows,
-fazendo um teste com o ping por exemplo:</p>
-<p><code>ansible win -i hosts -m win_ping</code></p>
-<p><strong>detalhes:</strong> no meu caso o meu grupo de hosts é o <strong>win</strong>, e usei o módulo ping <strong>win_ping</strong>!</p>
-<p>Uma lista com todos os módulos do Ansible disponíveis para Windows pode ser vista na documentação também, nesse <a href="https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html">link</a>.</p>
-<p>Bom, finalmente o seu host Windows já está configurado e já é possível automatizar boa parte da gerência de configuração.</p>
-<h3 id="links-para-referncia">Links para referência</h3>
-<ul>
-<li><a href="https://www.ansible.com/blog/connecting-to-a-windows-host">Connecting to a Windows host (how to no blog do Ansible)</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html">Windows Remote Management (documentação)</a></li>
-<li><a href="https://www.youtube.com/watch?v=FEdXUv02Dbg">Manage Windows like Linux with Ansible (talk apresentada no Red Hat Summit 2018)</a></li>
-</ul>
+    <h2 id="problem">Problem</h2>
+<p>Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.</p>
+<h2 id="solution">Solution</h2>
+<p>First of all, you need to create the heroku application, at <strong>New&gt; Create new app</strong>:
+<img src="/static/img_posts/new_project_heroku.png" alt="Create new app"></p>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
+    <a href="/posts/30days-of-devops/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">30 Days of Devops</span>
+    </a>
     
-    <a href="/posts/git-alias/" class="navigation-next">
-      <span class="navigation-tittle">Git Aliases</span>
+    
+    <a href="/posts/testes-unitarios-golang-/" class="navigation-next">
+      <span class="navigation-tittle">Escrevendo testes unitários com Golang</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>
     
