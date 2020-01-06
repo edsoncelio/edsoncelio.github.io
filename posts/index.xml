@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jan 2020 20:17:02 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 19:03:04 -0300</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,16 +18,6 @@
       
       <guid>https://edsoncelio.github.io/posts/testes-unitarios-golang-/</guid>
       <description>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes.</description>
-    </item>
-    
-    <item>
-      <title>Day 01 - Deploying an App from Gitlab to Heroku</title>
-      <link>https://edsoncelio.github.io/posts/day01-deploying-app-gitlab-heroku/</link>
-      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/posts/day01-deploying-app-gitlab-heroku/</guid>
-      <description>Problem Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.
-Solution First of all, you need to create the heroku application, at New&amp;gt; Create new app: </description>
     </item>
     
     <item>
