@@ -25,7 +25,7 @@
 <meta property="og:description" content="Systems Analyst | Developer | DevOps Enthusiastic" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://edsoncelio.github.io/portfolio/" />
-<meta property="og:updated_time" content="2020-01-06T20:17:02-03:00" />
+
 
 
     
@@ -167,63 +167,6 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     <section>
         <div class="portfolio_content">
             <hr class="divider">
-            
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12" href=""
-                    target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="" alt="Day 01 - Deploying an App from Gitlab to Heroku">
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <span class="project__title">
-                        <a href="" target="_blank" rel="noopener noreferrer">Day 01 - Deploying an App from Gitlab to Heroku</a>
-                    </span>
-                    <span class="project__subtitle-small">
-                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
-                        
-                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
-                    </span>
-                    <span class="project__summary">
-                        <h2 id="problem">Problem</h2>
-<p>Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.</p>
-<hr>
-<h2 id="solution">Solution</h2>
-<h3 id="configurations-related-to-heroku-account">Configurations related to Heroku account</h3>
-<p>First of all, you need to create the heroku application, at <strong>New&gt; Create new app</strong>:
-<img src="/static/new_project_heroku.png" alt="Create new app"></p>
-<p>Setting up the app name (in my case, it's <strong>demo-app-gitlab</strong>), and create:
-<img src="/static/create_app_heroku.png" alt="Setting up the app name"></p>
-<p>It's done, now is time to setting up your token to acess this app with the Gitlab.</p>
-<p>Go to <strong><a href="https://dashboard.heroku.com/account">Account</a>&gt;API Key</strong>, and generate a new API key, and save that.</p>
-<h3 id="configurations-related-to-gitlab-account">Configurations related to Gitlab account</h3>
-<p>Gitlab CI is a tool inside Gitlab to provide continuous integration, continuous delivery and continous deployment. It's works using a file
-called <code>.gitlab-ci.yml</code> placed at the repository's root.</p>
-<p>First of all, create your secret variable with the heroku API Key accessing <strong><a href="https://gitlab.com/%3Cyour-username%3E/%3Cyour-repository-name%3E/-/settings/ci_cd">https://gitlab.com/&lt;your-username&gt;/&lt;your-repository-name&gt;/-/settings/ci_cd</a> &gt; Variables</strong>:
-<img src="/static/variable_gitlab.png" alt="Variable gitlab"></p>
-<p><strong>observation:</strong> the name of your variable is <code>HEROKU_STAGING_API</code></p>
-<p>Create an repository with your project, and place the file <code>.gitlab-ci.yml</code> with the content inside:</p>
-<pre><code>develop:
-  stage: deploy
-  script:
-  - gem install dpl
-  - dpl --provider=heroku --app=demo-app-gitlab --api-key=$HEROKU_STAGING_API_KEY
-  only:
-  - develop
-
-</code></pre><p>Some important observations:</p>
-<ul>
-<li><code>--app=demo-app-gitlab</code>: this is the name of your app created at heroku</li>
-<li><code>--api-key=$HEROKU_STAGING_API_KEY</code>: this is one of most important steps,</li>
-<li><code>only: - develop</code> : this is about deploy your app just when has a pull in <code>develop</code> branch</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://docs.gitlab.com/ee/ci/">https://docs.gitlab.com/ee/ci/</a></li>
-</ul>
-
-                    </span>
-                </div>
-            </div>
-            <div class="row-space">&nbsp;</div>
             
         </div>
     </section>

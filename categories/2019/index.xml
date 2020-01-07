@@ -6,20 +6,10 @@
     <description>Recent content in 2019 on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jan 2020 20:17:02 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 19:03:04 -0300</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/categories/2019/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Day 01 - Deploying an App from Gitlab to Heroku</title>
-      <link>https://edsoncelio.github.io/portfolio/day01-deploying-app-gitlab-heroku/</link>
-      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/portfolio/day01-deploying-app-gitlab-heroku/</guid>
-      <description>Problem Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.
- Solution Configurations related to Heroku account First of all, you need to create the heroku application, at New&amp;gt; Create new app: Setting up the app name (in my case, it&#39;s demo-app-gitlab), and create: It&#39;s done, now is time to setting up your token to acess this app with the Gitlab.</description>
-    </item>
     
     <item>
       <title>30 Days of Devops</title>

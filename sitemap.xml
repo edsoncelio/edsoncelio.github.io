@@ -9,47 +9,7 @@
   
   <url>
     <loc>https://edsoncelio.github.io/categories/2019/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/tags/30daysofdevops/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/categories/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/portfolio/day01-deploying-app-gitlab-heroku/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/categories/devops/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/tags/en/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/portfolio/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/tags/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
   </url>
   
   <url>
@@ -58,7 +18,37 @@
   </url>
   
   <url>
+    <loc>https://edsoncelio.github.io/tags/30daysofdevops/</loc>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/categories/</loc>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/categories/devops/</loc>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/</loc>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/en/</loc>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://edsoncelio.github.io/posts/</loc>
+    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/</loc>
     <lastmod>2019-12-29T19:03:04-03:00</lastmod>
   </url>
   
@@ -119,6 +109,10 @@
   
   <url>
     <loc>https://edsoncelio.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/portfolio/</loc>
   </url>
   
 </urlset>
