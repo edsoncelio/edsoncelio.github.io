@@ -187,18 +187,18 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>Deploy an application hosted in Gitlab to Heroku, using Gitlab CI/CD.</p>
 <hr>
 <h2 id="solution">Solution</h2>
-<h3 id="configurations-related-to-heroku-account">Configurations related to Heroku account</h3>
+<h3 id="configurating-heroku-account">Configurating Heroku account</h3>
 <p><a href="https://www.heroku.com/">Heroku</a> is a PaaS with support to several programmming languages.</p>
-<p>First of all, you need to create the heroku application, at <strong>New&gt; Create new app</strong>:
+<p>In first place, you need to create the heroku application, at <strong>New&gt; Create new app</strong>:
 <img src="/static/new_project_heroku.png" alt="Create new app"></p>
 <p>Setting up the app name (in my case, it's <strong>demo-app-gitlab</strong>), and create:
 <img src="/static/create_app_heroku.png" alt="Setting up the app name"></p>
 <p>It's done, now is time to setting up your token to acess this app with the Gitlab.</p>
 <p>Go to <strong><a href="https://dashboard.heroku.com/account">Account</a>&gt;API Key</strong>, and generate a new API key, and save that.</p>
-<h3 id="configurations-related-to-gitlab-account">Configurations related to Gitlab account</h3>
+<h3 id="configurating-gitlab-account">Configurating Gitlab account</h3>
 <p>Gitlab CI is a tool inside <a href="http://gitlab.com">Gitlab</a> to provide continuous integration, continuous delivery and continous deployment. It's works using a file
 called <code>.gitlab-ci.yml</code> placed at the repository's root.</p>
-<p>First of all, create your secret variable with the heroku API Key accessing <strong><a href="https://gitlab.com/%3Cyour-username%3E/%3Cyour-repository-name%3E/-/settings/ci_cd">https://gitlab.com/&lt;your-username&gt;/&lt;your-repository-name&gt;/-/settings/ci_cd</a> &gt; Variables</strong>:
+<p>First, create your secret variable with the heroku API Key accessing <strong><a href="https://gitlab.com/%3Cyour-username%3E/%3Cyour-repository-name%3E/-/settings/ci_cd">https://gitlab.com/&lt;your-username&gt;/&lt;your-repository-name&gt;/-/settings/ci_cd</a> &gt; Variables</strong>:
 <img src="/static/variable_gitlab.png" alt="Variable gitlab"></p>
 <p><strong>Observation:</strong> the name of your variable is <code>HEROKU_STAGING_API</code></p>
 <p>Create an repository with your project, and place the file <code>.gitlab-ci.yml</code> with the content inside:</p>
@@ -210,7 +210,7 @@ called <code>.gitlab-ci.yml</code> placed at the repository's root.</p>
   only:
   - develop
 
-</code></pre><p>Some important observations:</p>
+</code></pre><p>Some important notes:</p>
 <ul>
 <li><code>--app=demo-app-gitlab</code>: this is the name of your app created at heroku</li>
 <li><code>--api-key=$HEROKU_STAGING_API_KEY</code>: this is one of most important steps,</li>
