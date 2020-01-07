@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Dec 2019 19:03:04 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 20:17:02 -0300</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>30daysofdevops</title>
       <link>https://edsoncelio.github.io/tags/30daysofdevops/</link>
-      <pubDate>Sun, 29 Dec 2019 19:03:04 -0300</pubDate>
+      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
       
       <guid>https://edsoncelio.github.io/tags/30daysofdevops/</guid>
       <description></description>
@@ -23,9 +23,27 @@
     <item>
       <title>en</title>
       <link>https://edsoncelio.github.io/tags/en/</link>
-      <pubDate>Sun, 29 Dec 2019 19:03:04 -0300</pubDate>
+      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
       
       <guid>https://edsoncelio.github.io/tags/en/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitlabci</title>
+      <link>https://edsoncelio.github.io/tags/gitlabci/</link>
+      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
+      
+      <guid>https://edsoncelio.github.io/tags/gitlabci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heroku</title>
+      <link>https://edsoncelio.github.io/tags/heroku/</link>
+      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
+      
+      <guid>https://edsoncelio.github.io/tags/heroku/</guid>
       <description></description>
     </item>
     
