@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>https://edsoncelio.github.io/posts/day01-deploying-ruby-app-gitlab-heroku/</loc>
+    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://edsoncelio.github.io/categories/devops/</loc>
     <lastmod>2020-01-06T20:17:02-03:00</lastmod>
   </url>
@@ -53,6 +58,11 @@
   </url>
   
   <url>
+    <loc>https://edsoncelio.github.io/posts/</loc>
+    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://edsoncelio.github.io/portfolio/</loc>
     <lastmod>2020-01-06T20:17:02-03:00</lastmod>
   </url>
@@ -64,11 +74,6 @@
   
   <url>
     <loc>https://edsoncelio.github.io/posts/30days-of-devops/</loc>
-    <lastmod>2019-12-29T19:03:04-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/posts/</loc>
     <lastmod>2019-12-29T19:03:04-03:00</lastmod>
   </url>
   

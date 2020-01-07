@@ -17,19 +17,21 @@
     
     
 
-<title>Escrevendo testes unitários com Golang • Edson Celio</title>
+<title>Day 01 - Deploying an Ruby App from Gitlab to Heroku • Edson Celio</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Escrevendo testes unitários com Golang"/>
-<meta name="twitter:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes."/>
+<meta name="twitter:title" content="Day 01 - Deploying an Ruby App from Gitlab to Heroku"/>
+<meta name="twitter:description" content="Problem Deploy an ruby application hosted in Gitlab to Heroku, using Gitlab CI/CD.
+ Solution Configurating Heroku account Heroku is a PaaS with support to several programmming languages."/>
 
-<meta property="og:title" content="Escrevendo testes unitários com Golang" />
-<meta property="og:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes." />
+<meta property="og:title" content="Day 01 - Deploying an Ruby App from Gitlab to Heroku" />
+<meta property="og:description" content="Problem Deploy an ruby application hosted in Gitlab to Heroku, using Gitlab CI/CD.
+ Solution Configurating Heroku account Heroku is a PaaS with support to several programmming languages." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://edsoncelio.github.io/posts/testes-unitarios-golang-/" />
-<meta property="article:published_time" content="2018-02-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-02-28T00:00:00+00:00" />
+<meta property="og:url" content="https://edsoncelio.github.io/posts/day01-deploying-ruby-app-gitlab-heroku/" />
+<meta property="article:published_time" content="2020-01-06T20:17:02-03:00" />
+<meta property="article:modified_time" content="2020-01-06T20:17:02-03:00" />
 
 
     
@@ -167,13 +169,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Escrevendo testes unitários com Golang</h1>
+    <h1>Day 01 - Deploying an Ruby App from Gitlab to Heroku</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Feb 28, 2018
+      <i class="fas fa-calendar-alt"></i> Jan 6, 2020
     
     
     
@@ -182,10 +184,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           in
           
           
-              <a class="badge badge-category" href="/categories/dev">DEV</a>
+              <a class="badge badge-category" href="/categories/devops">DEVOPS</a>
               •
           
-              <a class="badge badge-category" href="/categories/2018">2018</a>
+              <a class="badge badge-category" href="/categories/2019">2019</a>
               
           
       
@@ -197,13 +199,16 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/unit-tests">unit tests</a>
+          <a class="badge badge-tag" href="/tags/en">en</a>
            
       
-          <a class="badge badge-tag" href="/tags/golang">golang</a>
+          <a class="badge badge-tag" href="/tags/30daysofdevops">30daysofdevops</a>
            
       
-          <a class="badge badge-tag" href="/tags/testes-unit%C3%A1rios">testes unitários</a>
+          <a class="badge badge-tag" href="/tags/gitlabci">gitlabci</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/heroku">heroku</a>
           
       
     
@@ -217,76 +222,64 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   
   <div class="post">
-    <p>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote <code>testing</code> e começar a escrever os testes.</p>
-<h3 id="exemplo">Exemplo</h3>
-<p>Temos um arquivo chamado <code>main.go</code> com uma função chamada <code>Soma()</code> que realiza a soma de dois números:</p>
-<pre><code>package main
+    <h2 id="problem">Problem</h2>
+<p>Deploy an ruby application hosted in Gitlab to Heroku, using Gitlab CI/CD.</p>
+<hr>
+<h2 id="solution">Solution</h2>
+<h3 id="configurating-heroku-account">Configurating Heroku account</h3>
+<p><a href="https://www.heroku.com/">Heroku</a> is a PaaS with support to several programmming languages.</p>
+<p>In first place, you need to create the heroku application, at <strong>New&gt; Create new app</strong>:
+<img src="/static/new_project_heroku.png" alt="Create new app"></p>
+<p>Setting up the app name (in my case, it's <strong>demo-app-gitlab</strong>), and create:
+<img src="/static/create_app_heroku.png" alt="Setting up the app name"></p>
+<p>Since we will use a ruby project, you need to configure the <a href="https://devcenter.heroku.com/articles/buildpacks">buildpack</a> to the language, accessing <strong>Settings&gt;Add buildpacks</strong>:
+<img src="/static/heroku_buildpack.png" alt="Add buildpack"></p>
+<p>It's done, now is time to setting up your token to acess this app with the Gitlab.</p>
+<p>Go to <strong><a href="https://dashboard.heroku.com/account">Account</a>&gt;API Key</strong>, and generate a new API key, and save that.</p>
+<h3 id="configurating-gitlab-account">Configurating Gitlab account</h3>
+<p>Gitlab CI is a tool inside <a href="http://gitlab.com">Gitlab</a> to provide continuous integration, continuous delivery and continous deployment. It's works using a file
+called <code>.gitlab-ci.yml</code> placed at the repository's root.</p>
+<p>To this project, we will deploy an ruby application (you can use the <a href="https://github.com/heroku/ruby-getting-started">sample application</a>).</p>
+<p>First, create your secret variable with the heroku API Key accessing <strong><a href="https://gitlab.com/%3Cyour-username%3E/%3Cyour-repository-name%3E/-/settings/ci_cd">https://gitlab.com/&lt;your-username&gt;/&lt;your-repository-name&gt;/-/settings/ci_cd</a> &gt; Variables</strong>:
+<img src="/static/variable_gitlab.png" alt="Variable gitlab"></p>
+<p><strong>Observation:</strong> the name of your variable is <code>HEROKU_STAGING_API</code></p>
+<p>Create an repository with your project, and place the file <code>.gitlab-ci.yml</code> with the content inside:</p>
+<pre><code>develop:
+  stage: deploy
+  script:
+  - gem install dpl
+  - dpl --provider=heroku --app=demo-app-gitlab --api-key=$HEROKU_STAGING_API_KEY
+  only:
+  - develop
 
-func Soma(x,y int) int{
-  return x + y
-}
-...
-
-</code></pre><p>Agora vamos escrever um teste para verificar a função <code>Soma()</code>, em um arquivo chamado <code>main_test.go</code>:</p>
-<pre><code>package main
-
-func TestSoma(t *testing.T){
-  resultado := Soma(2,2)
-  if resultado != 4{
-    t.Errorf(&quot;Soma esperada: %d, obtida: %d&quot;, 4, resultado)
-  }
-}
-</code></pre><p>A função de teste acima, testa apenas <strong>UM</strong> valor por vez, para múltiplas entrada (e multiplas saída), tem-se o conceito de <em>test tables</em>:</p>
-<pre><code>package main
-
-import &quot;testing&quot;
-
-func TestSoma(t *testing.T) {
-	tabelas := []struct {
-		x int
-		y int
-		n int
-	}{
-		{1, 2, 3},
-		{2, 3, 5},
-		{0, 1, 1},
-	}
-
-	for _, tabela := range tabelas {
-		total := Soma(tabela.x, tabela.y)
-		if total != tabela.n {
-			t.Errorf(&quot;Soma de (%d+%d) incorreta, obtido: %d, esperado: %d.&quot;, tabela.x, tabela.y, total, tabela.n)
-		}
-	}
-}
-</code></pre><p>Pronto, já temos o teste relacionado a função de soma. Alguma considerações gerais:</p>
+</code></pre><p>Some important notes:</p>
 <ul>
-<li>O único parâmetro requerido pela função de teste é <code>t *testing.T</code></li>
-<li>O nome da função de testes segue o padrão: <code>Test</code> + nome da função com primeira letra maiúscula (e.g <code>TestSoma</code>)</li>
-<li>O nome do arquivo de testes segue padrão <code>algumacoisa_test.go</code> (e.g <code>main_test.go</code>)</li>
+<li><code>--app=demo-app-gitlab</code>: this is the name of your app created at heroku</li>
+<li><code>--api-key=$HEROKU_STAGING_API_KEY</code>: this is the variable used to connect with our heroku app</li>
+<li><code>only: - develop</code> : this is about deploy your app just when has a pull in <code>develop</code> branch</li>
 </ul>
-<p>Para executar os testes, podemos fazer:</p>
+<h2 id="references">References</h2>
 <ul>
-<li>no mesmo diretório: <code>go test</code></li>
-<li>explicitando o diretório: <code>go test github.com/edsoncelio/golangtest</code></li>
+<li><a href="https://docs.gitlab.com/ee/ci/">https://docs.gitlab.com/ee/ci/</a></li>
+<li><a href="https://devcenter.heroku.com/articles/buildpacks">https://devcenter.heroku.com/articles/buildpacks</a></li>
+<li><a href="https://docs.gitlab.com/ee/ci/yaml/">https://docs.gitlab.com/ee/ci/yaml/</a></li>
 </ul>
-<p>Esse é o básico para começar a escrever testes unitários, deixo algumas leituras recomendadas para tópicos mais avançados.</p>
-<p>Leituras recomendadas:</p>
-<ol>
-<li><a href="https://blog.alexellis.io/golang-writing-unit-tests/">Golang basics - writing unit tests</a></li>
-<li><a href="https://golang.org/pkg/testing/">Testing</a></li>
-</ol>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/posts/day01-deploying-ruby-app-gitlab-heroku/" class="navigation-prev">
+    <a href="/posts/30days-of-devops/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Day 01 - Deploying an Ruby App from Gitlab to Heroku</span>
+      <span class="navigation-tittle">30 Days of Devops</span>
     </a>
     
+    
+    <a href="/posts/testes-unitarios-golang-/" class="navigation-next">
+      <span class="navigation-tittle">Escrevendo testes unitários com Golang</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 
