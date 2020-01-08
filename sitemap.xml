@@ -9,36 +9,66 @@
   
   <url>
     <loc>https://edsoncelio.github.io/categories/2019/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://edsoncelio.github.io/tags/30daysofdevops/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/aws/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://edsoncelio.github.io/categories/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://edsoncelio.github.io/posts/day01-deploying-ruby-app-gitlab-heroku/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <loc>https://edsoncelio.github.io/posts/day02-configuring-ec2-with-terraform/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://edsoncelio.github.io/categories/devops/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/ec2/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://edsoncelio.github.io/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://edsoncelio.github.io/tags/en/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/posts/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/tags/terraform/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edsoncelio.github.io/posts/day01-deploying-ruby-app-gitlab-heroku/</loc>
     <lastmod>2020-01-06T20:17:02-03:00</lastmod>
   </url>
   
@@ -49,16 +79,6 @@
   
   <url>
     <loc>https://edsoncelio.github.io/tags/heroku/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/posts/</loc>
-    <lastmod>2020-01-06T20:17:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edsoncelio.github.io/tags/</loc>
     <lastmod>2020-01-06T20:17:02-03:00</lastmod>
   </url>
   

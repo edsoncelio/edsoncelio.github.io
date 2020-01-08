@@ -17,19 +17,21 @@
     
     
 
-<title>Escrevendo testes unitários com Golang • Edson Celio</title>
+<title>Day 02 - Configuring a EC2 instance at AWS using Terraform • Edson Celio</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Escrevendo testes unitários com Golang"/>
-<meta name="twitter:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes."/>
+<meta name="twitter:title" content="Day 02 - Configuring a EC2 instance at AWS using Terraform"/>
+<meta name="twitter:description" content="Problem Deploy a EC2 instance at AWS, using Terraform and infrastructure as a code principles.
+Solution To solve this issue, we will use the Terraform tool."/>
 
-<meta property="og:title" content="Escrevendo testes unitários com Golang" />
-<meta property="og:description" content="Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes." />
+<meta property="og:title" content="Day 02 - Configuring a EC2 instance at AWS using Terraform" />
+<meta property="og:description" content="Problem Deploy a EC2 instance at AWS, using Terraform and infrastructure as a code principles.
+Solution To solve this issue, we will use the Terraform tool." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://edsoncelio.github.io/posts/testes-unitarios-golang-/" />
-<meta property="article:published_time" content="2018-02-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-02-28T00:00:00+00:00" />
+<meta property="og:url" content="https://edsoncelio.github.io/posts/day02-configuring-ec2-with-terraform/" />
+<meta property="article:published_time" content="2020-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-08T00:00:00+00:00" />
 
 
     
@@ -167,13 +169,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Escrevendo testes unitários com Golang</h1>
+    <h1>Day 02 - Configuring a EC2 instance at AWS using Terraform</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Feb 28, 2018
+      <i class="fas fa-calendar-alt"></i> Jan 8, 2020
     
     
     
@@ -182,10 +184,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           in
           
           
-              <a class="badge badge-category" href="/categories/dev">DEV</a>
+              <a class="badge badge-category" href="/categories/devops">DEVOPS</a>
               •
           
-              <a class="badge badge-category" href="/categories/2018">2018</a>
+              <a class="badge badge-category" href="/categories/2019">2019</a>
               
           
       
@@ -197,13 +199,19 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/unit-tests">unit tests</a>
+          <a class="badge badge-tag" href="/tags/en">en</a>
            
       
-          <a class="badge badge-tag" href="/tags/golang">golang</a>
+          <a class="badge badge-tag" href="/tags/30daysofdevops">30daysofdevops</a>
            
       
-          <a class="badge badge-tag" href="/tags/testes-unit%C3%A1rios">testes unitários</a>
+          <a class="badge badge-tag" href="/tags/terraform">terraform</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/aws">aws</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ec2">ec2</a>
           
       
     
@@ -217,76 +225,118 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   
   <div class="post">
-    <p>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote <code>testing</code> e começar a escrever os testes.</p>
-<h3 id="exemplo">Exemplo</h3>
-<p>Temos um arquivo chamado <code>main.go</code> com uma função chamada <code>Soma()</code> que realiza a soma de dois números:</p>
-<pre><code>package main
-
-func Soma(x,y int) int{
-  return x + y
+    <h2 id="problem">Problem</h2>
+<p>Deploy a EC2 instance at AWS, using Terraform and infrastructure as a code principles.</p>
+<h2 id="solution">Solution</h2>
+<p>To solve this issue, we will use the <a href="https://www.terraform.io/">Terraform</a> tool. Terraform is a tool that use the Infraestructure as a Code concepts to privision your cloud, infrastructure or service,
+using declarative configuration files.</p>
+<p>The extension to terraform files is <code>.tf</code></p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>A AWS account with programmatic access only (we will use the Access Key and Secret Key )</li>
+<li>A key pair created to access the EC2 instance</li>
+</ul>
+<p>Our <code>main.tf</code> will be:</p>
+<pre><code>provider &quot;aws&quot;{
+    region = var.aws_region&quot; # will be defined in variables.tf
+    
 }
-...
 
-</code></pre><p>Agora vamos escrever um teste para verificar a função <code>Soma()</code>, em um arquivo chamado <code>main_test.go</code>:</p>
-<pre><code>package main
+### Security Group
+resource &quot;aws_security_group&quot; &quot;access-extern&quot; {
+  name = &quot;ssh-access&quot;
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = &quot;ssh&quot;
+    cidr_blocks = [&quot;0.0.0.0/0&quot;]
+  }
 
-func TestSoma(t *testing.T){
-  resultado := Soma(2,2)
-  if resultado != 4{
-    t.Errorf(&quot;Soma esperada: %d, obtida: %d&quot;, 4, resultado)
+}
+
+
+# EC2
+resource &quot;aws_instance&quot; &quot;ec2-terraform&quot;{
+    ami = var.ami_image  # will be defined in variables.tf
+    key_name = var.key_name  # will be defined in variables.tf
+    instance_type = var.instance_type  # will be defined in variables.tf
+    vpc_security_group_ids = [aws_security_group.access-extern.id]
+    associate_public_ip_address = &quot;true&quot;
+    
+    tags = {
+        Name = &quot;EC2 instance&quot;
+        Creator = &quot;Terraform&quot;
   }
 }
-</code></pre><p>A função de teste acima, testa apenas <strong>UM</strong> valor por vez, para múltiplas entrada (e multiplas saída), tem-se o conceito de <em>test tables</em>:</p>
-<pre><code>package main
 
-import &quot;testing&quot;
-
-func TestSoma(t *testing.T) {
-	tabelas := []struct {
-		x int
-		y int
-		n int
-	}{
-		{1, 2, 3},
-		{2, 3, 5},
-		{0, 1, 1},
-	}
-
-	for _, tabela := range tabelas {
-		total := Soma(tabela.x, tabela.y)
-		if total != tabela.n {
-			t.Errorf(&quot;Soma de (%d+%d) incorreta, obtido: %d, esperado: %d.&quot;, tabela.x, tabela.y, total, tabela.n)
-		}
-	}
+</code></pre><p>The <code>variables.tf</code> file:</p>
+<pre><code>variable &quot;aws_region&quot; {
+  description = &quot;Default region to use&quot;
+  default     = &quot;us-east-1&quot;
 }
-</code></pre><p>Pronto, já temos o teste relacionado a função de soma. Alguma considerações gerais:</p>
+
+variable &quot;access_key&quot; {
+    description = &quot;AWS access key&quot;
+    type = string
+}
+
+variable &quot;secret_key&quot; {
+    description = &quot;AWS access secret key&quot;
+    type = string
+}
+
+variable &quot;instance_type&quot; {
+  description = &quot;Instance type&quot;
+  default     = &quot;t2.micro&quot;
+}
+
+variable &quot;ami_image&quot;{
+  description = &quot;AMI default&quot;
+  default     = &quot;ami-00eb20669e0990cb4&quot;
+}
+
+variable &quot;key_name&quot; {
+  description = &quot;Name of the SSH keypair to use in AWS.&quot;
+  default = &quot;MyFavoriteKey&quot;
+}
+
+</code></pre><p>The <code>outputs.tf</code> file:</p>
+<pre><code>output &quot;public_ip-webserver&quot; {
+  value       = aws_instance.ec2-terraform.public_ip
+  description = &quot;Public IP address&quot;
+}
+
+
+</code></pre><p>To plan this changes, we will run:</p>
+<p><code>terraform plan</code></p>
+<p><strong>Note:</strong> At this time, we will be prompted to type the <code>key_access</code> and <code>secret_access</code></p>
+<p>And to apply this changes:</p>
+<p><code>terraform apply</code></p>
+<p>The result will show the IP address related to our instance.</p>
+<p>In a few minutes we can test connecting by ssh.</p>
+<h2 id="references">References</h2>
 <ul>
-<li>O único parâmetro requerido pela função de teste é <code>t *testing.T</code></li>
-<li>O nome da função de testes segue o padrão: <code>Test</code> + nome da função com primeira letra maiúscula (e.g <code>TestSoma</code>)</li>
-<li>O nome do arquivo de testes segue padrão <code>algumacoisa_test.go</code> (e.g <code>main_test.go</code>)</li>
+<li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html</a></li>
+<li><a href="https://github.com/awsdocs/amazon-ec2-user-guide/blob/master/doc_source/ec2-key-pairs.md">https://github.com/awsdocs/amazon-ec2-user-guide/blob/master/doc_source/ec2-key-pairs.md</a></li>
+<li><a href="https://www.terraform.io/docs/providers/aws/r/instance.html">https://www.terraform.io/docs/providers/aws/r/instance.html</a></li>
+<li><a href="https://www.terraform.io/docs/providers/aws/r/security_group.html">https://www.terraform.io/docs/providers/aws/r/security_group.html</a></li>
 </ul>
-<p>Para executar os testes, podemos fazer:</p>
-<ul>
-<li>no mesmo diretório: <code>go test</code></li>
-<li>explicitando o diretório: <code>go test github.com/edsoncelio/golangtest</code></li>
-</ul>
-<p>Esse é o básico para começar a escrever testes unitários, deixo algumas leituras recomendadas para tópicos mais avançados.</p>
-<p>Leituras recomendadas:</p>
-<ol>
-<li><a href="https://blog.alexellis.io/golang-writing-unit-tests/">Golang basics - writing unit tests</a></li>
-<li><a href="https://golang.org/pkg/testing/">Testing</a></li>
-</ol>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/posts/day02-configuring-ec2-with-terraform/" class="navigation-prev">
+    <a href="/posts/day01-deploying-ruby-app-gitlab-heroku/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Day 02 - Configuring a EC2 instance at AWS using Terraform</span>
+      <span class="navigation-tittle">Day 01 - Deploying an Ruby App from Gitlab to Heroku</span>
     </a>
     
+    
+    <a href="/posts/testes-unitarios-golang-/" class="navigation-next">
+      <span class="navigation-tittle">Escrevendo testes unitários com Golang</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 
