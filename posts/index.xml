@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Escrevendo testes unitários com Golang</title>
-      <link>https://edsoncelio.github.io/posts/testes-unitarios-golang-/</link>
-      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://edsoncelio.github.io/posts/testes-unitarios-golang-/</guid>
-      <description>Para escrever testes unitários com Golang tudo o que precisamos é importar o pacote testing e começar a escrever os testes.</description>
-    </item>
-    
-    <item>
       <title>Day 02 - Configuring a EC2 instance at AWS using Terraform</title>
       <link>https://edsoncelio.github.io/posts/day02-configuring-ec2-with-terraform/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
