@@ -279,7 +279,7 @@ services:
  
 </code></pre><p>Caso esse compose seja usado em <em>swarm mode</em>, o <em>swarm</em> vai tentar recriar as <em>tasks</em> com status <em>unhealth</em>.</p>
 <h2 id="conclusão">Conclusão</h2>
-<p>Um caso de uso bem prático, seria verificar o status de um container executando <em>PostgreSQL</em> usando uma ferramenta nativa schamada <em>pg_isready</em>:</p>
+<p>Um caso de uso bem prático, seria verificar o status de um container executando <em>PostgreSQL</em> usando uma ferramenta nativa:</p>
 <pre><code>FROM postgres
 
 # especificar o usuário com -U para evitar erros nos logs
