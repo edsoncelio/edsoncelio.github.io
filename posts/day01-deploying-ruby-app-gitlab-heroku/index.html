@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -46,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.7d8b112552d7b2aecadcf602c1cd45acef4cb99a33c75405009bca42ce31d15f.css" integrity="sha256-fYsRJVLXsq7K3PYCwc1FrO9MuZozx1QFAJvKQs4x0V8=">
+<link rel="stylesheet" href="/scss/hyde-hyde.aa00e8539fa8f0c6d8faefbeb9a96674e4ee28a1701a4ded3eeb5a7d389e111e.css" integrity="sha256-qgDoU5&#43;o8MbY&#43;u&#43;&#43;ualmdOTuKKFwGk3tPutafTieER4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -230,17 +230,17 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><a href="https://www.heroku.com/">Heroku</a> is a PaaS with support to several programmming languages.</p>
 <p>In first place, you need to create the heroku application, at <strong>New&gt; Create new app</strong>:
 <img src="/static/new_project_heroku.png" alt="Create new app"></p>
-<p>Setting up the app name (in my case, it's <strong>demo-app-gitlab</strong>), and create:
+<p>Setting up the app name (in my case, it&rsquo;s <strong>demo-app-gitlab</strong>), and create:
 <img src="/static/create_app_heroku.png" alt="Setting up the app name"></p>
 <p>Since we will use a ruby project, you need to configure the <a href="https://devcenter.heroku.com/articles/buildpacks">buildpack</a> to the language, accessing <strong>Settings&gt;Add buildpacks</strong>:
 <img src="/static/heroku_buildpack.png" alt="Add buildpack"></p>
-<p>It's done, now is time to setting up your token to acess this app with the Gitlab.</p>
+<p>It&rsquo;s done, now is time to setting up your token to acess this app with the Gitlab.</p>
 <p>Go to <strong><a href="https://dashboard.heroku.com/account">Account</a>&gt;API Key</strong>, and generate a new API key, and save that.</p>
 <h3 id="configurating-gitlab-account">Configurating Gitlab account</h3>
-<p>Gitlab CI is a tool inside <a href="http://gitlab.com">Gitlab</a> to provide continuous integration, continuous delivery and continous deployment. It's works using a file
-called <code>.gitlab-ci.yml</code> placed at the repository's root.</p>
+<p>Gitlab CI is a tool inside <a href="http://gitlab.com">Gitlab</a> to provide continuous integration, continuous delivery and continous deployment. It&rsquo;s works using a file
+called <code>.gitlab-ci.yml</code> placed at the repository&rsquo;s root.</p>
 <p>To this project, we will deploy an ruby application (you can use the <a href="https://github.com/heroku/ruby-getting-started">sample application</a>).</p>
-<p>First, create your secret variable with the heroku API Key accessing <strong><a href="https://gitlab.com/%3Cyour-username%3E/%3Cyour-repository-name%3E/-/settings/ci_cd">https://gitlab.com/&lt;your-username&gt;/&lt;your-repository-name&gt;/-/settings/ci_cd</a> &gt; Variables</strong>:
+<p>First, create your secret variable with the heroku API Key accessing <strong><a href="https://gitlab.com/">https://gitlab.com/</a><!-- raw HTML omitted -->/<!-- raw HTML omitted -->/-/settings/ci_cd &gt; Variables</strong>:
 <img src="/static/variable_gitlab.png" alt="Variable gitlab"></p>
 <p><strong>Observation:</strong> the name of your variable is <code>HEROKU_STAGING_API</code></p>
 <p>Create an repository with your project, and place the file <code>.gitlab-ci.yml</code> with the content inside:</p>

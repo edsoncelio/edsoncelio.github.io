@@ -11,20 +11,20 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
     
 
-<title>Gerência de configuração de máquinas Windows com Ansible • Edson Celio</title>
+<title>Gerência de config de máquinas Windows com Ansible • Edson Celio</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Gerência de configuração de máquinas Windows com Ansible"/>
+<meta name="twitter:title" content="Gerência de config de máquinas Windows com Ansible"/>
 <meta name="twitter:description" content="Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible, pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso."/>
 
-<meta property="og:title" content="Gerência de configuração de máquinas Windows com Ansible" />
+<meta property="og:title" content="Gerência de config de máquinas Windows com Ansible" />
 <meta property="og:description" content="Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible, pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/" />
@@ -44,7 +44,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.7d8b112552d7b2aecadcf602c1cd45acef4cb99a33c75405009bca42ce31d15f.css" integrity="sha256-fYsRJVLXsq7K3PYCwc1FrO9MuZozx1QFAJvKQs4x0V8=">
+<link rel="stylesheet" href="/scss/hyde-hyde.aa00e8539fa8f0c6d8faefbeb9a96674e4ee28a1701a4ded3eeb5a7d389e111e.css" integrity="sha256-qgDoU5&#43;o8MbY&#43;u&#43;&#43;ualmdOTuKKFwGk3tPutafTieER4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -167,7 +167,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Gerência de configuração de máquinas Windows com Ansible</h1>
+    <h1>Gerência de config de máquinas Windows com Ansible</h1>
     
     
 <div class="post__meta">
@@ -219,16 +219,16 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   <div class="post">
     <p>Nesse artigo vou contar um pouco da minha experiência com gerência de configuração de máquinas Windows usando o Ansible,
 pode ser que sirva para alguém que esteja começando a trilhar esse caminho tortuoso.</p>
-<h2 id="no-se-usa-ssh-e-sim-winrm">Não se usa SSH, e sim WinRM</h2>
+<h2 id="não-se-usa-ssh-e-sim-winrm">Não se usa SSH, e sim WinRM</h2>
 <p>O primeiro ponto é que em hosts Windows se usa protocolo chamado <a href="https://docs.microsoft.com/en-us/windows/desktop/winrm/portal">Windows Remote Management</a>
 (baseado em SOAP) que deve ser configurado previamente no host.</p>
 <p>Felizmente a documentação do Ansible fornece um script para fazer toda a configuração, nesse <a href="https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html#winrm-setup">link</a>.</p>
 <p><strong>observação:</strong> recomendo fazer todos os testes que a documentação sugere, porque se tiver alguma chance de alguma dar errado, com certeza vai dar!</p>
-<h2 id="-necessrio-instalar-a-biblioteca-pywinrm-no-ansible">É necessário instalar a biblioteca pywinrm no Ansible</h2>
+<h2 id="é-necessário-instalar-a-biblioteca-pywinrm-no-ansible">É necessário instalar a biblioteca pywinrm no Ansible</h2>
 <p>Dado que o Ansible comunica com hosts windows usando o winrm, é necessário instalar uma biblioteca que não vem por padrão no Ansible,
 é bem simples (é python :D):</p>
 <p><code>pip3 install &quot;pywinrm&gt;=0.3.0&quot;</code></p>
-<h2 id="configurao-dos-hosts-no-inventrio">Configuração dos hosts no inventário</h2>
+<h2 id="configuração-dos-hosts-no-inventário">Configuração dos hosts no inventário</h2>
 <p>Com o winrm configurado corretamente, é hora de configurar efetivamente a conexão com os hosts do inventário, o que requer um pouco de atenção.</p>
 <p>Segue um exemplo de inventário com uma máquina windows:</p>
 <pre><code>[win]
@@ -247,14 +247,14 @@ e a segunda se refere a não validação de certificados dado que para esse caso
 <p><code>ansible_winrm_scheme</code></p>
 <p>Que pode ser: http ou https (por padrão é usado https que usa a porta 5986, http usa a porta 5985)</p>
 <p>Além dessas opções existem muitas outras, que podem ser usadas dependendo do caso, todas as opções podem ser vistas na documentação também, nesse <a href="https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html#inventory-options">link</a>.</p>
-<h2 id="executando-mdulos-windows-no-ansible">Executando módulos Windows no Ansible</h2>
+<h2 id="executando-módulos-windows-no-ansible">Executando módulos Windows no Ansible</h2>
 <p>Finalmente, se tudo tiver sido configurado com sucesso, é possível comunicar com seu host windows,
 fazendo um teste com o ping por exemplo:</p>
 <p><code>ansible win -i hosts -m win_ping</code></p>
 <p><strong>detalhes:</strong> no meu caso o meu grupo de hosts é o <strong>win</strong>, e usei o módulo ping <strong>win_ping</strong>!</p>
 <p>Uma lista com todos os módulos do Ansible disponíveis para Windows pode ser vista na documentação também, nesse <a href="https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html">link</a>.</p>
 <p>Bom, finalmente o seu host Windows já está configurado e já é possível automatizar boa parte da gerência de configuração.</p>
-<h3 id="links-para-referncia">Links para referência</h3>
+<h3 id="links-para-referência">Links para referência</h3>
 <ul>
 <li><a href="https://www.ansible.com/blog/connecting-to-a-windows-host">Connecting to a Windows host (how to no blog do Ansible)</a></li>
 <li><a href="https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html">Windows Remote Management (documentação)</a></li>

@@ -6,71 +6,17 @@
     <description>Recent content in Tags on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>30daysofdevops</title>
-      <link>https://edsoncelio.github.io/tags/30daysofdevops/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      <title>docker</title>
+      <link>https://edsoncelio.github.io/tags/docker/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://edsoncelio.github.io/tags/30daysofdevops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aws</title>
-      <link>https://edsoncelio.github.io/tags/aws/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://edsoncelio.github.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ec2</title>
-      <link>https://edsoncelio.github.io/tags/ec2/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://edsoncelio.github.io/tags/ec2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>en</title>
-      <link>https://edsoncelio.github.io/tags/en/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://edsoncelio.github.io/tags/en/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>terraform</title>
-      <link>https://edsoncelio.github.io/tags/terraform/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://edsoncelio.github.io/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gitlabci</title>
-      <link>https://edsoncelio.github.io/tags/gitlabci/</link>
-      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/tags/gitlabci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>heroku</title>
-      <link>https://edsoncelio.github.io/tags/heroku/</link>
-      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/tags/heroku/</guid>
+      <guid>https://edsoncelio.github.io/tags/docker/</guid>
       <description></description>
     </item>
     

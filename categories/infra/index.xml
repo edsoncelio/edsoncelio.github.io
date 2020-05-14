@@ -6,13 +6,22 @@
     <description>Recent content in infra on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/categories/infra/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Gerência de configuração de máquinas Windows com Ansible</title>
+      <title>Docker Healthcheck</title>
+      <link>https://edsoncelio.github.io/posts/docker-healthcheck/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://edsoncelio.github.io/posts/docker-healthcheck/</guid>
+      <description>Introdução Enquanto revia alguns assuntos de um curso de docker (Docker Mastery com o Bret Fisher), esbarrei em um tópico que muito me interessou: healthcheck built-in no docker, e é sobre isso que gostaria que escrever um pouco sobre!</description>
+    </item>
+    
+    <item>
+      <title>Gerência de config de máquinas Windows com Ansible</title>
       <link>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       

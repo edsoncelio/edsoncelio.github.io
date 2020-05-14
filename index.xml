@@ -6,39 +6,18 @@
     <description>Recent content on Edson Celio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edsoncelio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Day 02 - Configuring a EC2 instance at AWS using Terraform</title>
-      <link>https://edsoncelio.github.io/posts/day02-configuring-ec2-with-terraform/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      <title>Docker Healthcheck</title>
+      <link>https://edsoncelio.github.io/posts/docker-healthcheck/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://edsoncelio.github.io/posts/day02-configuring-ec2-with-terraform/</guid>
-      <description>Problem Deploy a EC2 instance at AWS, using Terraform and infrastructure as a code principles.
-Solution To solve this issue, we will use the Terraform tool.</description>
-    </item>
-    
-    <item>
-      <title>Day 01 - Deploying an Ruby App from Gitlab to Heroku</title>
-      <link>https://edsoncelio.github.io/posts/day01-deploying-ruby-app-gitlab-heroku/</link>
-      <pubDate>Mon, 06 Jan 2020 20:17:02 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/posts/day01-deploying-ruby-app-gitlab-heroku/</guid>
-      <description>Problem Deploy an ruby application hosted in Gitlab to Heroku, using Gitlab CI/CD.
- Solution Configurating Heroku account Heroku is a PaaS with support to several programmming languages.</description>
-    </item>
-    
-    <item>
-      <title>30 Days of Devops</title>
-      <link>https://edsoncelio.github.io/posts/30days-of-devops/</link>
-      <pubDate>Sun, 29 Dec 2019 19:03:04 -0300</pubDate>
-      
-      <guid>https://edsoncelio.github.io/posts/30days-of-devops/</guid>
-      <description>Objectives For 30 days, write articles with problem solving in real scenarios using DevOps culture concepts/tools.
-Rules  Title format: day&amp;lt;day number&amp;gt;-&amp;lt;article title&amp;gt; All codes used to resolve the issues will be made available in https://github.</description>
+      <guid>https://edsoncelio.github.io/posts/docker-healthcheck/</guid>
+      <description>Introdução Enquanto revia alguns assuntos de um curso de docker (Docker Mastery com o Bret Fisher), esbarrei em um tópico que muito me interessou: healthcheck built-in no docker, e é sobre isso que gostaria que escrever um pouco sobre!</description>
     </item>
     
     <item>
@@ -51,7 +30,7 @@ Rules  Title format: day&amp;lt;day number&amp;gt;-&amp;lt;article title&amp;gt;
     </item>
     
     <item>
-      <title>Gerência de configuração de máquinas Windows com Ansible</title>
+      <title>Gerência de config de máquinas Windows com Ansible</title>
       <link>https://edsoncelio.github.io/posts/gerencia-configuracao-ansible-windows/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -65,7 +44,7 @@ Rules  Title format: day&amp;lt;day number&amp;gt;-&amp;lt;article title&amp;gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://edsoncelio.github.io/about/</guid>
-      <description>Engenheiro da computação em formação, atualmente atuando como analista de sistemas em Grendene S/A. Nas horas vagas, palestra e e organiza eventos para a difusão da cultura DevOps pelo país.</description>
+      <description>Engenheiro da computação em formação, atualmente atuando como analista de sistemas em Grendene S/A e membro do programa Docker Community Leaderr.</description>
     </item>
     
   </channel>
